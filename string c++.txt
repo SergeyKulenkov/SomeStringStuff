@@ -1,0 +1,36 @@
+std::string reverse_words(std::string str)
+{
+  std::string a = "";
+  std::string b = "";
+  for(int i = 0;i < str.length();i++)
+  {
+     a += str[i];
+     if(str[i] == ' ' ) 
+     {
+        reverse(a.begin(),  a.end()-1);
+        b += a;
+        a = "";
+     }
+     if (str[i] == '.' || i == str.length()-1)
+     {
+        reverse(a.begin(),  a.end());
+        b += a;
+     }
+  }
+  
+  return b;
+}
+
+
+# include <string>
+std::string disemvowel(std::string str)
+{
+    for(int i = 0; i < str.length();i++)
+    {
+        while(std::tolower(str[i]) == 'a' || std::tolower(str[i]) == 'o' ||std::tolower(str[i]) == 'u' ||std::tolower(str[i]) == 'i' ||std::tolower(str[i]) == 'e')
+        {
+            str.erase(i, 1);
+        }
+    }
+    return str;
+}
